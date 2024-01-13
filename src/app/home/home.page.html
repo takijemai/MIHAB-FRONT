@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-header>
+  <div class="header-container">
+    <img src="../../assets/icon/MI HAB.png" alt="Mi Hab logo" class="logo">
+    <h1 class="header-title">Mi Hab</h1>
+    <p class="header-subtitle">Your best app to find a room</p>
   </div>
+</ion-header>
+<ion-content class="content" class="ion-padding">
+
+  <div >
+    <img class="img-studio54" src="../../assets/icon/fhEwgb.gif" width="150%" >
+  </div>
+  <div class="actions">
+    <ion-button class="signup" expand="block" mode="ios" routerLink="../login" color="dark"  >Log in</ion-button>
+    <p class="login">¿You are not a MiHab user? <a routerLink="../register">Registre Now </a></p>
+</div>
 </ion-content>

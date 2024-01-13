@@ -1,0 +1,58 @@
+
+
+<ion-content class="user-posts ion-padding">
+  <div class="header-image" [style.background-image]="'url(http://res.cloudinary.com/dq1utqamt/image/upload/v' + userlist.picVersion + '/' + userlist.picId + ')'"></div>
+  <div class="main-content" text-wrap text-center>
+    <div class="circularBtn">
+      <img src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{userlist.picVersion}}/{{userlist.picId}}" >
+    </div>
+    <h2>{{username}} </h2>
+    <p>city <span>&bull;</span>country</p>
+  </div>
+  <div>
+    <ion-segment color="primary" [(ngModel)]="voirprofile" mode="ios">
+      <ion-segment-button value="posts" style="font-size: 14px;">
+        Posts
+      </ion-segment-button>
+      <ion-segment-button value="details" style="font-size: 14px;">
+        Detaills
+      </ion-segment-button>
+      <ion-segment-button value="images" style="font-size: 14px;">
+        Images
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="user-posts" [ngSwitch]="voirprofile" lines="none">
+    <ion-list *ngSwitchCase="'posts'">
+      <app-userposts [posts]="userlist"></app-userposts>
+    </ion-list>
+    <ion-list *ngSwitchCase="'details'">
+      <app-userdetails [details]="userlist"></app-userdetails>
+    </ion-list>
+    <ion-list *ngSwitchCase="'images'">
+      <app-userimages [images]="userlist"></app-userimages>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer color="dark" mode="ios">
+  <ion-segment [scrollable]="true" value="heart" mode="ios">
+    <ion-segment-button value="home" routerLink="../principal">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="globe" routerLink="../search">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="person" routerLink="../profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="chat" routerLink="../chat">
+      <ion-icon name="chatbubble-ellipses" ></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="cog" routerLink="../about">
+      <ion-icon  name="cog"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>
+

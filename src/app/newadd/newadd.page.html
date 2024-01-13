@@ -1,0 +1,84 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title> New Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<div>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea [(ngModel)]="newpost"  ></ion-textarea>
+      <div class="description">
+        <span class="description-text">Write the specific of the property</span>
+      </div>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Price</ion-label>
+      <ion-input class="euro-input" [(ngModel)]="price">
+      <span class="euro-symbol">$</span>
+    </ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Address</ion-label>
+      <ion-input  type="text" [(ngModel)]="address" (ionChange)="onAddressChange($event)"></ion-input>
+      <div  #mapElement class="map" style="height:500px;width: 100%;"></div>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">City</ion-label>
+      <ion-input type="text" [(ngModel)]="city"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked" >Superfice</ion-label>
+      <ion-input  type="number" [(ngModel)]="superfice"  ></ion-input>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div>
+  <ion-grid class="image-grid">
+    <ion-row>
+      <ion-col *ngFor="let image of images ; let i = index" >
+        <img  [src]="image">
+        <span>  {{i+1}} </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<div class="button-container">
+  <ion-button mode="ios" class="btn2" fill="clear"  (click)="takePicture()" >
+    <ion-icon color="danger" name="camera-outline" class="cam"></ion-icon>Add ¨Photos
+  </ion-button>
+  <ion-button class="ion-padding button" fill="clear" mode="ios" class="btn" (click)="Submitpost()">Create Post</ion-button>
+</div>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ion-footer >
+  <ion-segment [scrollable]="true" value="heart" mode="ios">
+    <ion-segment-button value="home" routerLink="../principal">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="globe" routerLink="../search">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="person" routerLink="../profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

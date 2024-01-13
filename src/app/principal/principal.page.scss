@@ -1,0 +1,193 @@
+ion-title{
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 32px;
+padding-top: -50% ;
+
+}
+
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}
+ion-label{
+  background: #eee2a9;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: none;
+  text-transform: initial;
+  font-family: Montserrat-Black  !important;
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/icon/rent.png');
+  background-size: cover;
+  filter: brightness(70%) contrast(1.2);
+  z-index: -1;
+}
+ion-img{
+  width: 25%;
+  height: 20%;
+  text-align: left;
+  display:inline-block;
+  justify-content:center;
+  border-radius: 9px;
+  padding: 10px 20px  ;
+
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.button-container ion-button {
+  margin: 10px;
+}
+
+ion-button {
+  //display: flex;
+  //justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: none;
+  text-transform: initial;
+  font-size: 15px;
+  //background: #ffd700;
+  border-style: solid;
+  //border-color: #eeeeee;
+  //border-width: 0.3px;
+  font-family: Montserrat;
+
+  //background: linear-gradient(90deg, #8c36a5 0%, #b9aee7 100%);
+  color: white;
+
+}
+ion-card {
+  padding: 10px 20px  ;
+  color: #570606;
+}
+ion-card-content {
+
+  font-family: Itallic;
+  font-size: 16px;
+}
+b{
+  font-family: Montserrat;
+  font-size: 18px;
+}
+img{
+  padding: 10px 20px  ;
+}
+.username{
+  text-align: center;
+  justify-content: center;
+  font-family: Montserrat;
+  font-size: 18px;
+}
+.icon-text-container {
+  display: inline;
+}
+
+.icon-text-container ion-icon {
+  //padding-right: 15px;
+margin: 5px;
+}
+
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+
+  ion-icon {
+    --margin-end: 5px;
+  }
+}
+
+.camera-icon-container {
+  margin: 5px;
+}
+
+.camera-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.upload-button-container {
+  margin: 5px;
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+
+  ion-icon {
+    --margin-end: 5px;
+  }
+}
+
+
+
+swiper {
+  height: 30vh;
+
+  div {
+    transform: translateY(10%);
+    height: 20vh;
+    width: 94%;
+    margin: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+
+
+  }
+}
+.signup {
+  background: linear-gradient(90deg, #8c36a5 0%, #b9aee7 100%);
+}
+
+
+
+
+
+  .no-button {
+    background-color: #ff3d00 !important;
+    color: #ffffff !important;
+  }
+
+
+
+
+
+@font-face{
+  font-family:"Ubuntu";
+  src:url(../../assets/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url(../../assets/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Black";
+  src:url(../../assets/Montserrat/Montserrat-Black.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Bold";
+  src:url(../../assets/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+  font-family:"Itallic";
+  src:url(../../assets/newItalic.woff2);
+}

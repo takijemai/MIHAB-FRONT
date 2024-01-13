@@ -1,0 +1,47 @@
+<ion-header >
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="principal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+ <div class="user-info">
+  <ion-avatar>
+    <img src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{imgVersion}}/{{imgId}}">
+  </ion-avatar>
+ <ion-label class="username"> {{username}} </ion-label>
+ </div>
+
+ <ion-list class="settings-list">
+  <ion-item  class="change-password" lines="none " >
+    <ion-icon name="lock-closed-outline" slot="start" color="secondary" ></ion-icon>
+    <ion-label> Change password</ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end" routerLink="../password"></ion-icon>
+
+  </ion-item>
+  <ion-item  class="logout-button" lines="none " (click)="logout()">
+    <ion-icon name="log-out-outline" slot="start" color="danger"></ion-icon>
+    <ion-label> Log out</ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  </ion-item>
+
+
+ </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-segment scrollable="true" value="heart" mode="ios">
+    <ion-segment-button value="home" routerLink="../principal">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="globe" routerLink="../search">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="person" routerLink="../profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

@@ -1,0 +1,39 @@
+<h2 class="title">App Valoration </h2>
+<div class="chart-container" *ngIf="chartReady" >
+
+  <div class="chart-wrapper">
+    <canvas
+    #pieChart
+    baseChart
+    [type]="'doughnut'"
+    [datasets]="pieChartDatasets"
+    [labels]="pieChartLabels"
+    [options]="pieChartOptions"
+    [legend]="pieChartLegend"
+    [plugins]="pieChartPlugins"
+  >
+  </canvas>
+  </div>
+</div>
+<div class="satisfaction">
+  <p>We are committed to providing the best user experience possible. The satisfaction of our users is our top priority and we are constantly working to improve our service.</p>
+  <p>We appreciate your feedback and hope you have a satisfactory experience with our app.</p>
+</div>
+
+
+
+
+<ion-footer >
+  <ion-segment [scrollable]="true" value="heart" mode="ios">
+    <ion-segment-button value="home" routerLink="../search">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="globe" routerLink="../principal">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="person" routerLink="../profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>
+

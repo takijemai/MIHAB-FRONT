@@ -1,0 +1,25 @@
+<ion-content class="ion-padding">
+  <div class="background-image"></div>
+  <h1> Join Now:</h1>
+  <form class="form" [formGroup]="formValidation">
+    <ion-item lines="none" class="form-group">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-input type="text" formControlName="username" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="form-group">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-input type="text" formControlName="email" placeholder="Email "></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="form-group">
+      <ion-icon name="lock-open" slot="start"></ion-icon>
+      <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="form-group">
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-input type="phoneNumber" formControlName="phoneNumber" placeholder=" Phone Number"></ion-input>
+    </ion-item>
+     <ion-button color="dark" expand="block"   (click)="Register(formValidation.value)"> Register Now</ion-button>
+     <ion-button color="success" expand="block" routerLink="/login"> Exist Profile</ion-button>
+  </form>
+
+</ion-content>

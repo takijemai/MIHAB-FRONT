@@ -1,0 +1,45 @@
+.user-info{
+  display: flex;
+  flex-direction:  column;
+  align-items: center;
+  margin-top: 30px;
+}
+ion-title{
+  text-align: center;
+}
+
+.username{
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+.settings-list{
+  margin-top: 30px;
+}
+
+.seetings-list ion-label{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.change-password , .logout-button{
+  display: flex;
+  align-items: center;
+}
+
+.change-password ion-icon , .logout-button ion-icon{
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.change-password ion-label , .logout-button ion-label{
+  font-size: 15px;
+  flex: 1;
+}
+
+.change-password ion-button , .logout-button ion-button{
+  font-size: 15px;
+  padding: 5px 1Opx;
+}

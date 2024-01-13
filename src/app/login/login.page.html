@@ -1,0 +1,47 @@
+
+
+<ion-content class="ion-padding">
+  <div class="background-image"></div>
+  <h1>Welcome!</h1>
+  <form class="form" [formGroup]="formValidation" (ngSubmit)="login(formValidation.value)" >
+
+    <ion-item class="form-group">
+      <ion-icon name="mail-outline" color="dark" slot="start"></ion-icon>
+      <ion-input type="text" formControlName="email" placeholder="Your email" class="iconb"></ion-input>
+    </ion-item>
+    <div *ngIf="!formValidation.controls['email'].valid && formValidation.controls['email'].touched" >
+      <ng-container *ngFor="let validation of formValidationMessage.email" >
+        <div class="error-message" *ngIf="formValidation.controls['email'].hasError(validation.type)" >
+      {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="none" class="form-group" class="lock">
+      <ion-icon name="lock-open-outline" slot="start" color="dark"></ion-icon>
+      <ion-input type="password" formControlName="password" placeholder="Password" class="iconb"></ion-input>
+    </ion-item>
+    <div *ngIf="!formValidation.controls['password'].valid && formValidation.controls['password'].touched" >
+      <ng-container *ngFor="let validation of formValidationMessage.password" >
+        <div class="error-message" *ngIf="formValidation.controls['password'].hasError(validation.type)" >
+      {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="div-button-login">
+      <ion-button id="btnSubmit" color="dark" type="submit">Login</ion-button>
+      <a class="small-text" color="secondary" (click)="resetpassword()"> <u> Forget your password?</u> </a>
+    </div>
+
+  <div class="div-label-error">
+    <ion-label class="error-message"></ion-label>
+  </div>
+  <div class="login-link">
+    Do not have an account yet? <a routerLink="/register">  <b>Register</b></a>
+  </div>
+
+  </form>
+
+
+</ion-content>

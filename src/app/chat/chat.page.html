@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" class="backBtn">
+      <ion-back-button defaultHref="listchat"></ion-back-button>
+    </ion-buttons>
+
+    <ion-avatar slot="start" class="avatar">
+      <img  *ngIf="!receiverdata"  src="../../assets/icon/user.png">
+      <img  *ngIf="receiverdata"  src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{receiverdata.picVersion}}/{{receiverdata.picId}}">
+      <img >
+    </ion-avatar>
+
+    <ion-title class="userTitle" *ngIf="receiverName">
+      <h2>{{receiverName}}
+      <p class="online" *ngIf="Online && ! isTyping" >Online</p>
+      <p class="online"*ngIf="isTyping"  > {{receiverName}}is typing ...</p>
+    </h2>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content style="margin-top:10px; margin-bottom: 10px" #scrollElement [scrollEvents]="true">
+  <div class="message-wrapper" *ngFor="let item of msgArray" >
+    <div class="message-container"
+    [ngClass]="{'left': username !== receiverName && user !== item.senderId, 'right': user === item.senderId, 'sender': user === item.senderId, 'receiver': user !== item.senderId}">
+  <div class="chat-bubble slide-{{username !== receiverName && user !== item.senderId ? 'left' : 'right'}}">
+    <div class="message-body" autolinker>{{item.body}} </div>
+    <div class="message-time"> {{item.timestamp | date: 'short'}}</div>
+  </div>
+</div>
+  </div>
+
+</ion-content>
+
+<ion-footer no-border class="message-input">
+  <ion-toolbar>
+    <ion-item color="light" lines="none">
+      <ion-input id="msgInput" [(ngModel)]="message" (keypress)="istyping()" placeholder="Send a message..."></ion-input>
+      <button class="msgBtn" ion-button clear item-end (click)="sendmessage()" >
+        <ion-icon class="footer-btn" name="send"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

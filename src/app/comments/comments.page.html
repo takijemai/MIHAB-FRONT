@@ -1,0 +1,71 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="post-card">
+          <ion-card-header>
+            <ion-avatar slot="start"  *ngIf="picVersion" >
+              <img src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{picVersion}}/{{picId}}">
+            </ion-avatar>
+            <ion-card-title class="username"> {{username}} </ion-card-title>
+            <ion-card-subtitle class="postTime"> {{TimeFromNow(likedate)}}  </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="post-content">
+            <p class="post-text">{{post}} </p>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item-divider color="primary">
+            List of comments
+
+          </ion-item-divider>
+          <ion-item *ngFor="let comment of commentArray" >
+            <ion-avatar slot="start">
+              <img src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{comment.userId.picVersion}}/{{comment.userId.picId}}">
+
+             </ion-avatar>
+            <ion-label>
+              <h2 class="username"> {{comment.userId.username}} </h2>
+              <p class="post">{{comment.comment}} </p>
+              <p class="postTime"> {{TimeFromNow(likedate)}}  </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-padding">
+        <ion-textarea class="txt" class="comment-input" [clearOnEdit]="true" [autoGrow]="true" [(ngModel)]="comment" >New Comments</ion-textarea>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  size="12" class="ion-text-padding">
+<ion-button fill="clear" shape="round" class="btn" class="comment-btn" (click)="AddComment()">Add Comment</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer color="dark" mode="ios">
+  <ion-segment [scrollable]="true" value="heart" mode="ios">
+
+    <ion-segment-button value="globe" (click)="back()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="person" routerLink="../profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="cog" routerLink="../about" >
+      <ion-icon  name="cog"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

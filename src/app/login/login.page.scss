@@ -1,0 +1,239 @@
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/icon/band.jpg');
+  background-size: cover;
+  filter: brightness(70%) contrast(1.2);
+  z-index: -1;
+}
+
+ion-toolbar {
+  --background: #ffffff;
+  --border-width: 0;
+  --box-shadow: none;
+  --color: #141414;
+  --height: 56px;
+  --min-height: 56px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px;
+}
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  padding: 35px;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+img.logo {
+  width: 80%;
+  max-width: 100px;
+  margin-bottom: 40px;
+}
+
+.label-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  margin-bottom: 20px;
+}
+
+ion-icon {
+  color: #141414;
+}
+
+ion-label {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+ion-input {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+ion-checkbox {
+  --background: #ffffff;
+  --border-color: #141414;
+  --border-radius: 4px;
+  --border-style: solid;
+  --border-width: 2px;
+  --checked-background: #141414;
+  --checked-border-color: #141414;
+  --checked-color: #ffffff;
+  --color: #141414;
+}
+
+ion-button {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  --background: #141414;
+  --background-activated: #ffffff;
+  --color: #ffffff;
+  --box-shadow: none;
+}
+
+ion-button[disabled] {
+  --background: #d8d8d8;
+  --color: #aaaaaa;
+}
+
+.google-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #141414;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.google-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.google-btn:hover {
+  background-color: #ddd;
+}
+
+.google-icon {
+  width: 25px;
+}
+
+.btn-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .form-group ion-label {
+    font-size: 14px;
+  }
+
+  .form-group ion-input {
+    font-size: 14px;
+  }
+
+  .checkbox-group ion-label {
+    font-size: 12px;
+  }
+
+  .button-group ion-button {
+    font-size: 14px;
+  }
+
+  .google-btn {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+  .btn-text {
+  color: #5f6368;
+  font-size: 0.9rem;
+  }
+
+  .div-label-error {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .login-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #5f6368;
+  font-size: 0.9rem;
+  }
+
+  /* Media Queries */
+
+  @media screen and (min-width: 480px) {
+  .form {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 400px;
+  }
+
+  .title {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  }
+
+  .div-button-login {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  }
+
+  .small-text {
+  margin-top: 0;
+  font-size: 0.8rem;
+  align-self: flex-start;
+  }
+
+  .div-label-error {
+  margin-top: 0;
+  }
+
+  .login-link {
+  margin-top: 2rem;
+  font-size: 1rem;
+  }
+  }
+
+

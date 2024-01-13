@@ -1,0 +1,140 @@
+.content-item1 {
+  background: #64b5f6;
+  margin: 0px auto !important;
+  text-align: center;
+}
+.content-card1 {
+  padding: 5px;
+  margin: 0px auto !important;
+  text-align: center;
+  border-radius: 2%;
+  margin: 10px 10px 5px 10px !important;
+}
+
+.ionAvatar {
+  margin-left: 0px !important;
+}
+.content-card1 .postImage {
+  width: 88%;
+  margin: 0 auto;
+  text-align: center;
+}
+.content-card1 .username {
+  font-weight: bold;
+  color: #64b5f6;
+  padding: 0px !important;
+  text-align: left !important;
+  margin-top: 5px;
+  padding-top: 5px !important;
+  font-family: Montserrat-Bold !important;
+  font-size: 22px !important;
+}
+
+.content-card1 .postTime {
+  font-size: 14px !important;
+  padding: 5px !important;
+  text-align: left !important;
+  margin-top: 5px;
+  padding-top: 5px !important;
+  font-weight: bold;
+  color: #104169;
+  font-family: Montserrat-Bold !important;
+}
+.content-card1 .postCity {
+  font-size: 14px !important;
+  padding: 5px !important;
+  text-align: center !important;
+  margin-top: 5px;
+  padding-top: 5px !important;
+  font-weight: bold;
+  color: #104169;
+  font-family: Montserrat-Bold !important;
+}
+.content-card1 .post {
+  font-size: 1.5rem !important;
+  text-align: left;
+  margin-left: -7px;
+  margin-top: 5px;
+  font-family: Ubuntu !important;
+}
+.item-inner {
+  border: none !important;
+}
+.fab {
+  border: 2px double #64b5f6;
+  background: #64b5f6 !important;
+}
+.noResultItem {
+  background: linear-gradient(180deg, #4aa1f3, #64b5f6);
+  position: absolute;
+  color: #fff;
+  top: 40%;
+  left: 50%;
+  padding: 15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100px;
+}
+.noResult {
+  color: #fff !important;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Ubuntu !important;
+}
+.postImage {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px !important;
+}
+.notLiked {
+  color: #5e5a5a !important;
+}
+
+.btn {
+  position: relative;
+  width: 40px;
+
+  top:1px;
+  right: 5px;
+  overflow: visible!important;
+}
+
+
+.notifications {
+  background-color: rgb(202, 197, 197);
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  border-radius: 100%;
+
+
+}
+@font-face{
+  font-family:"Ubuntu";
+  src:url(../../../assets/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url(../../../assets/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Black";
+  src:url(../../../assets/Montserrat/Montserrat-Black.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Bold";
+  src:url(../../../assets/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+  font-family:"Itallic";
+  src:url(../../../assets/newItalic.woff2);
+}

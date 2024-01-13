@@ -1,0 +1,29 @@
+<div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Users Information</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content  >
+      <ion-item>
+        <ion-label position="stacked" >Name:</ion-label>
+        <ion-text>  {{detail.username}} </ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-text> {{detail.email}} </ion-text>
+      </ion-item>
+
+      <ion-item  *ngIf="detail.phoneNumber"  >
+        <ion-label position="stacked">Phone Number:</ion-label>
+        <ion-text> {{detail.phoneNumber}} </ion-text>
+      </ion-item>
+
+      <ion-item *ngIf="detail.country" >
+        <ion-label position="stacked"  >Adress:</ion-label>
+        <ion-text>{{detail.country}}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>

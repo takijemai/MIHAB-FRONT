@@ -1,0 +1,21 @@
+<div  class="group">
+  <ion-grid>
+      <ion-row>
+   <ion-col col-6 col-md-4 col-lg-3 col-xl-2 class="created_group" *ngFor="let item of userimages"  >
+   <div class="container">
+   <div class="imgs">
+    <img class="imgBg"src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{item.imgVersion}}/{{item.imgId}}">
+     <ion-button  end class="imgBtn" fill="outline" shape="round" color="secondary" fill="clear"
+     (click)="setdefaultimage(item)">
+     Set Image Profile
+      </ion-button>
+     <ion-button  end class="imgBtn" fill="outline" shape="round" color="danger" fill="clear"
+     (click)="deleteimage(item)">
+      Delete Image
+      </ion-button>
+        </div>
+      </div>
+       </ion-col>
+      </ion-row>
+  </ion-grid>
+</div>

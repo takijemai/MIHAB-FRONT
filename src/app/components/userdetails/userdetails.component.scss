@@ -1,0 +1,60 @@
+ion-header {
+  background-color: #3171e0;
+  color: #fff;
+}
+
+ion-title {
+  text-align: center;
+}
+
+ion-card {
+  margin: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: Ubuntu !important;
+}
+
+ion-card-header {
+  background-color: #b2f04e;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  font-family: Ubuntu !important;
+}
+
+
+
+ion-label {
+  font-size: 14px;
+}
+
+ion-text {
+  font-size: 16px;
+  font-family: Ubuntu !important;
+  text-align: center;
+}
+
+
+@font-face{
+  font-family:"Ubuntu";
+  src:url(../../../assets/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url(../../../assets/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Black";
+  src:url(../../../assets/Montserrat/Montserrat-Black.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Bold";
+  src:url(../../../assets/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+  font-family:"Itallic";
+  src:url(../../../assets/newItalic.woff2);
+}

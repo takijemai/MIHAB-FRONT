@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASEURL:'http://localhost:3000/api/newapp',
+  SocketURL: "http://localhost:3000/"
+
 };
 
 /*

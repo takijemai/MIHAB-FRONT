@@ -24,3 +24,63 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+// global.scss
+@import 'swiper/scss';
+@import 'swiper/scss/autoplay';
+@import 'swiper/scss/keyboard';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/scrollbar';
+@import 'swiper/scss/zoom';
+@import '@ionic/angular/css/ionic-swiper';
+
+.yes-button {
+  background-color: #00c853 !important;
+  color: #ffffff !important;
+}
+
+.no-button {
+  background-color: #ff3d00 !important;
+  color: #ffffff !important;
+}
+.rating-alert {
+  --background: url(../../app/src/assets/icon/stars.png) no-repeat center center fixed;
+  --background-size: cover;
+}
+ion-item.account ion-icon {
+  color: rgb(39, 212, 235);
+}
+
+ion-item.setting ion-icon {
+  color: rgb(69, 34, 221);
+}
+ion-item.ideal ion-icon {
+  color: rgb(52, 231, 61);
+}
+ion-item.app ion-icon {
+  color: rgb(231, 217, 22);
+}
+ion-item.home ion-icon {
+  color: red;
+}
+ion-item.valor ion-icon {
+  color: rgb(199, 15, 122);
+}
+ion-item.message ion-icon {
+  color: rgb(55, 240, 101);
+}
+ion-item.lock ion-icon {
+  color: rgb(50, 52, 189);
+}
+ion-item.person ion-icon {
+  color: rgb(216, 230, 29);
+}
+ion-item.phone ion-icon {
+  color: rgb(224, 152, 18);
+}
+
+ion-item.contact ion-icon {
+  color: rgb(58, 236, 222);
+}
+ion-item.survey ion-icon {
+  color: rgb(204, 118, 19);
+}

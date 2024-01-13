@@ -1,0 +1,83 @@
+ion-content {
+  .alert-card {
+      padding: 0px !important;
+      margin: 0px !important;
+      height: 100px !important;
+      width: 100%;
+      margin-bottom: 10px !important;
+      margin-top: 10px !important;
+      box-shadow: none !important;
+      border: 1px solid rgb(245, 235, 235);
+      border-radius: 5px;
+
+    }
+
+    ion-item {
+      height: 100px !important;
+      margin: 0px !important;
+      padding: 0px !important;
+      top: -8px !important;
+      bottom: 0px !important;
+      font-family: Ubuntu;
+    }
+
+  .unread {
+    color: #c0c0c0 !important;
+  }
+
+  .read {
+    color: #4aa1f3;
+  }
+
+  .sender {
+    color: #4aa1f3;
+    font-family: Itallic;
+  }
+
+  .ionAvatar {
+      margin-top: -10px !important;
+      margin-left: 10px !important;
+  }
+
+  .msgGrid {
+    margin-top: -7px !important;
+  }
+
+  .msg {
+    background: #ec1414;
+    border-radius: 0.8em; //12px
+    -moz-border-radius: 0.8em; //12px
+    -webkit-border-radius: 0.8em; //12px
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    padding-top: -50px !important;
+    font-family: Ubuntu;
+  }
+}
+
+@font-face{
+  font-family:"Ubuntu";
+  src:url(../../assets/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url(../../assets/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Black";
+  src:url(../../assets/Montserrat/Montserrat-Black.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Bold";
+  src:url(../../assets/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+  font-family:"Itallic";
+  src:url(../../assets/newItalic.woff2);
+}

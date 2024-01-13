@@ -1,0 +1,143 @@
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.description-text {
+  font-size: 14px;
+  color: #999;
+}
+
+.description-count {
+  font-size: 14px;
+  color: #999;
+}
+
+
+
+
+
+ion-toolbar {
+  text-align: center;
+}
+
+
+ion-item {
+  margin-top: 10px;
+}
+.euro-symbol {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.euro-input:focus + .euro-symbol {
+  opacity: 2;
+}
+
+.euro-input:not(:placeholder-shown) + .euro-symbol {
+  opacity: 2;
+}
+
+ion-label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+}
+
+ion-input,
+ion-textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+.image-grid{
+  margin-top: 20px;
+}
+.image-grid ion-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-grid ion-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-grid ion-col span {
+  margin-top: 5 px;
+  font-size: 12px;
+  color: #333;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn2 {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.btn2 .cam {
+  margin-right: 10px;
+}
+
+.button {
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+
+#map {
+  height: 50vh;
+}
+capacitor-google-map {
+  display: inline-block;
+  width: 275px;
+  height: 400px;
+  padding: 10px;
+}
+@font-face{
+  font-family:"Ubuntu";
+  src:url(../../assets/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url(../../assets/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Black";
+  src:url(../../assets/Montserrat/Montserrat-Black.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Bold";
+  src:url(../../assets/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+  font-family:"Itallic";
+  src:url(../../assets/newItalic.woff2);
+}

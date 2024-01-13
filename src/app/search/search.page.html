@@ -1,0 +1,302 @@
+<ion-header>
+  <ion-toolbar class="tabs_bar" color="dark" mode="md">
+    <ion-segment value="all"  [(ngModel)]="all" mode="ios">
+      <ion-segment-button value="post">
+        All Posts
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        My Favorites
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content" class="ion-padding"  >
+
+<div [ngSwitch]="all">
+  <ion-list *ngSwitchCase="'post'" >
+    <ion-item class="content-item1 item" lines="none" *ngFor="let item of postArr" >
+
+            <ion-thumbnail slot="start" *ngIf="item.images[0].imgVersion && item.images[0].imgId" (click)="openimage(item)">
+              <img src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{item.images[0].imgVersion}}/{{item.images[0].imgId}}"/>
+
+              <ion-modal #modal2  (willDismiss)="onWillDismiss($event)" >
+                <ng-template>
+                  <ion-header>
+                    <ion-toolbar>
+                      <ion-buttons slot="start">
+                        <ion-button (click)="cancel2()" color="danger" fill="outline" shape="round" >Back</ion-button>
+                      </ion-buttons>
+                      <ion-title> More Photos</ion-title>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content class="ion-padding">
+                    <div class="screen-image">
+                      <swiper [config]="config">
+                       <ng-container *ngIf="imgId" >
+                       <ng-template swiperSlide  >
+                       <ion-img class="full-screen-image" [src]="'http://res.cloudinary.com/dq1utqamt/image/upload/v'+
+                       imgVersion + '/' + imgId"></ion-img>
+                       </ng-template>
+                        </ng-container>
+                        <ng-container *ngFor="let item of images" >
+                         <ng-template swiperSlide>
+                          <ion-img class="full-screen-image"
+                          [style.background-image]="'url(http://res.cloudinary.com/dq1utqamt/image/upload/v'+
+                          item.imgVersion + '/' + item.imgId + ')'">
+                        </ion-img>
+                           </ng-template>
+                           </ng-container>
+                            </swiper>
+
+                            <div>
+                         <ion-grid *ngIf="postDetail"  >
+                        <ion-row>
+                       <ion-col size="12">
+<ion-card>
+  <ion-card-header *ngIf="postDetail.address" >
+    <ion-card-title>Address: {{postDetail.address}} </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item *ngIf="postDetail.city"  >
+      <ion-icon name="location-outline" slot="start" (click)="openMap()"></ion-icon>
+      <ion-label> city: {{postDetail.city}} </ion-label>
+    </ion-item>
+    <ion-item *ngIf="postDetail.price" >
+      <ion-icon name="logo-euro" slot="start"></ion-icon>
+      <ion-label> price: {{postDetail.price}} </ion-label>
+    </ion-item>
+    <ion-item *ngIf="postDetail.superfice" >
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      <ion-label> superfice: {{postDetail.superfice}} </ion-label>
+    </ion-item>
+    <ion-item *ngIf="postDetail.country" >
+      <ion-icon name="globe-outline" slot="start"></ion-icon>
+      <ion-label> country: {{postDetail.country}} </ion-label>
+    </ion-item>
+    <ion-item *ngIf="postDetail.likedate" >
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      <ion-label> Date: {{postDetail.likedate}} </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+                      </ion-col>
+                      </ion-row>
+                      </ion-grid>
+
+                         </div>
+
+                         </div>
+
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+            </ion-thumbnail>
+
+            <ion-thumbnail slot="start" *ngIf="!item.images[0].imgVersion && item.images[0].imgId">
+              <img src="../../assets/icon/ro.png"/>
+            </ion-thumbnail>
+            <ion-label>
+              <h2 class="username">
+               {{item.user.username}}
+               <ion-button fill="clear" class="heart" (click)="addfavorite(item)"><ion-icon name="heart" slot="icon-only"></ion-icon></ion-button>
+              </h2>
+
+
+              <ion-button  *ngIf="item.user.username === username"   fill="clear"  color="primary" slot="end" (click)="EditPost(item)" id="open-edit-modal"><ion-icon name="create-outline" slot="icon-only"></ion-icon></ion-button>
+              <ion-button   fill="clear"  color="success" slot="end" (click)="share(item)"><ion-icon name="share" slot="icon-only"></ion-icon></ion-button>
+              <ion-button  *ngIf="item.user.username === username"  (click)="DeletePost(item._id)"  fill="clear"  color="danger" ><ion-icon   name="trash" slot="icon-only"></ion-icon></ion-button>
+
+
+              <ion-modal trigger="open-edit-modal" (willDismiss)="onWillDismiss($event)">
+                <ng-template>
+                  <ion-header>
+                    <ion-toolbar>
+                      <ion-buttons slot="start">
+                        <ion-button (click)="cancel()">Cancel</ion-button>
+                      </ion-buttons>
+                      <ion-title>Welcome</ion-title>
+                      <ion-buttons slot="end">
+                        <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+                      </ion-buttons>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content class="ion-padding">
+                    <ion-item>
+                      <ion-input
+                        label="Enter your name"
+                        labelPlacement="stacked"
+                        type="text"
+                        placeholder="Your name"
+                        [(ngModel)]="editpost"
+                      ></ion-input>
+                    </ion-item>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+
+         <ion-text color="medium"><p  class="pstyle"  >   {{item.city}} </p></ion-text>
+         <ion-label class="btn" > <h4> {{item.address}} </h4>
+           <p> {{item.post}} </p>
+           <p class="postTime"> {{TimefromNow(item.likesdate)}} </p>
+            <p text-wrap class="postCity"  >   @{{item.country}}</p>
+           <h4  > Price: {{item.price}} € </h4>
+         </ion-label>
+         <span>
+           <ion-icon name="person" ></ion-icon> ,
+         </span>
+          {{item.superfice}} m2
+         <ion-row >
+           <ion-col size="4">
+             <ion-button ion-button icon-left clear (click)="LikePost(item)">
+               <ion-icon name="thumbs-up"></ion-icon>
+               <div>{{item.likes.length}} </div>
+             </ion-button>
+           </ion-col>
+           <ion-col  size="4">
+             <ion-button ion-button icon-left clear routerLink="../comments/{{item._id}}"  >
+               <ion-icon name="document-text-outline" ></ion-icon>
+               <div>{{item.comments.length}} </div>
+             </ion-button>
+           </ion-col>
+           <ion-col  size="4">
+             <ion-button  ion-button icon-left clear  routerLink="../chat/{{item.user.username}}">
+               <ion-icon name="chatbubbles"  ></ion-icon>
+             </ion-button>
+           </ion-col>
+         </ion-row>
+            </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list   *ngSwitchCase="'favorites'" >
+    <ion-item class="content-item1"  *ngFor="let item of toppost" lines="none">
+      <ion-thumbnail slot="start"   (click)="openimage(item)" *ngIf="item.images[0]?.imgVersion && item.images[0]?.imgId" >
+
+        <img  src="http://res.cloudinary.com/dq1utqamt/image/upload/v{{item.images[0].imgVersion}}/{{item.images[0].imgId}}"/>
+
+         <ion-button   fill="clear"   (click)="openimage(item)" ></ion-button>
+           <ion-modal #modal2  (willDismiss)="onWillDismiss($event)">
+                <ng-template>
+                  <ion-header>
+                    <ion-toolbar>
+                      <ion-buttons slot="start">
+                        <ion-button (click)="cancel2()" color="danger" fill="outline" shape="round" >Back</ion-button>
+                      </ion-buttons>
+                      <ion-title> More Photos</ion-title>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content class="ion-padding">
+
+        <div class="screen-image">
+          <swiper [config]="config" >
+           <ng-container *ngIf="imgId"   >
+           <ng-template swiperSlide  >
+           <ion-img class="full-screen-image" [src]="'http://res.cloudinary.com/dq1utqamt/image/upload/v'+
+           imgVersion + '/' + imgId"></ion-img>
+           </ng-template>
+            </ng-container>
+            <ng-container *ngFor="let item of images">
+             <ng-template swiperSlide
+             *ngIf="item.imgId !== picId && item.imgId !== '' && item.imgVersion !== '' " >
+              <ion-img class="full-screen-image"
+              [style.background-image]="'url(http://res.cloudinary.com/dq1utqamt/image/upload/v'+
+              item.imgVersion + '/' + item.imgId + ')'">
+            </ion-img>
+               </ng-template>
+               </ng-container>
+                </swiper>
+                </div>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+            </ion-thumbnail>
+            <ion-thumbnail slot="start"  *ngIf="!item.images[0]?.imgVersion && item.images[0]?.imgId" >
+              <img src="../../assets/icon/ro.png"/>
+            </ion-thumbnail>
+            <ion-label>
+              <h2 class="username">
+                {{item.user.username}}
+              </h2>
+        <ion-item lines="none">
+          <ion-button *ngIf="item.user.username === username"    fill="clear"  color="danger" slot="end" (click)="deletefavorite(item._id)"><ion-icon name="trash" slot="icon-only"></ion-icon></ion-button>
+        </ion-item>
+         <ion-text color="medium"><p  class="pstyle" *ngIf="item.city" > {{item.city}}</p></ion-text>
+         <ion-label class="btn" *ngIf="item.address"> <h4> {{ item.address}} </h4>
+           <p> {{item.post}} </p>
+           <p class="postTime"> {{TimefromNow(item.likesdate)}} </p>
+            <p text-wrap class="postCity" *ngIf="item.user.country"  >   @{{item.user.country}} </p>
+
+           <h4 *ngIf="item.price" > Price:{{item.price}}€ </h4>
+         </ion-label>
+
+         <span >
+           <ion-icon name="person" ></ion-icon> ,
+         </span>
+         {{item.superfice}} m2
+         <ion-row >
+          <ion-col size="4">
+            <ion-button ion-button icon-left clear (click)="LikePost(item)"  >
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{item.likes.length}}</div>
+            </ion-button>
+          </ion-col>
+          <ion-col  size="4">
+            <ion-button ion-button icon-left clear  routerLink="../comments/{{item._id}}" >
+              <ion-icon name="document-text-outline" ></ion-icon>
+              <div>{{item.comments.length}}</div>
+
+            </ion-button>
+          </ion-col>
+          <ion-col  size="4">
+            <ion-button ion-button icon-left clear
+            routerLink="../chat/{{item.user.username}}" >
+              <ion-icon name="chatbubbles"  ></ion-icon>
+
+            </ion-button>
+          </ion-col>
+        </ion-row>
+            </ion-label>
+    </ion-item>
+
+  </ion-list>
+</div>
+
+</ion-content>
+
+
+
+
+<ion-footer >
+  <ion-segment [scrollable]="true" value="heart" mode="ios">
+    <ion-segment-button value="home" routerLink="../principal">
+      <ion-icon name="home-outline"></ion-icon>
+      <br>
+        <span>Home</span>
+    </ion-segment-button>
+    <ion-segment-button value="chat"  routerLink="../listchat" (ionSelect)="click()">
+      <button ion-button class="notification-button">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <br>
+        <span>Alerts</span>
+        <ion-badge color="danger" *ngIf="msgCount > 0">{{msgCount}}</ion-badge>
+      </button>
+    </ion-segment-button>
+
+    <ion-segment-button routerLink="../newadd">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <br>
+        <span>Public</span>
+    </ion-segment-button>
+    <ion-segment-button value="globe" routerLink="../idealista">
+      <ion-icon name="earth-outline"></ion-icon>
+      <br>
+        <span>Idealista</span>
+    </ion-segment-button>
+    <ion-segment-button value="person" routerLink="../profile" >
+      <ion-icon name="person-outline"></ion-icon>
+      <br>
+        <span>Account</span>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

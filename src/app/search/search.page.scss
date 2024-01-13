@@ -1,0 +1,362 @@
+
+ion-toolbar {
+  .segment {
+    .segment-button {
+      height:  - 10px;
+      line-height:  10px;
+      border: none;
+      color:light;
+      border-radius: 0px !important;
+      max-width: 100%;
+      background: none !important;
+      font-family: Ubuntu !important;
+    }
+    .segment-activated {
+      background: none !important;
+      border-bottom: 4px solid
+    }
+  }
+  &.tabs_bar {
+    min-height:  - 10px !important;
+
+  }
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/icon/land.jpg');
+  background-size: cover;
+  filter: brightness(70%) contrast(1.2);
+  z-index: -1;
+}
+
+
+.content-item1 {
+
+  margin:10px 0px auto !important;
+  text-align: center;
+  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+
+}
+.content-item1:hover {
+  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+  border-color: #333;
+}
+.content-card1 {
+  padding: 5px;
+  margin: 0px auto !important;
+  text-align: center;
+  border-radius: 2%;
+  margin: 10px 10px 5px 10px !important;
+
+}
+
+.ionAvatar {
+  margin-left: 0px !important;
+}
+.content-card1 .postImage {
+  width: 88%;
+  margin: 0 auto;
+  text-align: center;
+}
+.content-card1 .username {
+  font-weight: bold;
+  color: #64b5f6;
+  padding: 0px !important;
+  text-align: left !important;
+  margin-top: 5px;
+  padding-top: 5px !important;
+  font-family: Montserrat-Bold !important;
+  font-size: 22px !important;
+}
+
+.content-card1 .postTime {
+  font-size: 14px !important;
+  padding: 5px !important;
+  text-align: left !important;
+  margin-top: 5px;
+  padding-top: 5px !important;
+  font-weight: bold;
+  color: #104169;
+  font-family: Montserrat-Bold !important;
+}
+.content-card1 .postCity {
+  font-size: 14px !important;
+  padding: 5px !important;
+  text-align: center !important;
+  margin-top: 5px;
+  padding-top: 5px !important;
+  font-weight: bold;
+  color: #104169;
+  font-family: Montserrat-Bold !important;
+}
+.content-card1 .post {
+  font-size: 1.5rem !important;
+  text-align: left;
+  margin-left: -7px;
+  margin-top: 5px;
+  font-family: Ubuntu !important;
+}
+.item-inner {
+  border: none !important;
+}
+.fab {
+  border: 2px double #64b5f6;
+  background: #64b5f6 !important;
+}
+.noResultItem {
+  background: linear-gradient(180deg, #4aa1f3, #64b5f6);
+  position: absolute;
+  color: #fff;
+  top: 40%;
+  left: 50%;
+  padding: 15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100px;
+}
+.noResult {
+  color: #fff !important;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Ubuntu !important;
+}
+.postImage {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px !important;
+}
+.notLiked {
+  color: #5e5a5a !important;
+}
+
+.btn2 {
+  position: relative;
+  width: 40px;
+
+  top:1px;
+  right: 5px;
+  overflow: visible!important;
+}
+
+
+.notifications {
+  background-color: rgb(202, 197, 197);
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  border-radius: 100%;
+
+
+}
+.notification-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.notification-button ion-icon {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.notification-button ion-badge {
+  position: absolute;
+  //top: -1px;
+  right: -0.7px;
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
+}
+.notification-button span {
+  font-size: 14px;
+  color: #333;
+  margin-left: 5px;
+}
+
+.heart{
+justify-content: right !important;
+ padding-right: 25px !important;
+}
+.heart-red{
+  color: red;
+  }
+  .heart-white{
+  color: rgb(170, 164, 164);
+  }
+swiper {
+  height: 30vh;
+
+  div {
+    transform: translateY(10%);
+    height: 35vh;
+    width: 94%;
+    margin: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+
+
+  }
+}
+
+.full-screen-image {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.screen-image{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+
+}
+.map-wrapper {
+  width: 100%;
+  height: 400px;
+  margin-top: 10px;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+
+}
+.icon-text-container {
+  display: inline;
+}
+
+.icon-text-container ion-icon {
+  padding-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+.btn{
+  font-size: 0.9rem;
+  font-weight: bold;
+  h4{
+    font-size: 1.2rem;
+  font-weight: bold !important;
+  }
+  p{
+    font-size:0.7rem;
+  }
+}
+
+.item {
+  font-size:0.8rem;
+  ion-thumbnail{
+    height: 40vh;
+    width: 32vw;
+    img{
+      border-radius: 5px;
+      height: 100%;
+      width:  100%;
+      object-fit: cover;
+    }
+  }
+  h4{
+    font-size: 1.2rem;
+  }
+  h2{
+    font-family: Montserrat-Bold !important;
+  }
+}
+.distance {
+  font-size:0.8rem;
+  padding-top: 0.2vh;
+}
+.pstyle {
+  padding-bottom: 0.5vh;
+  font-size:0.8rem !important;
+}
+.ideal {
+  background-color: rgb(94, 248, 127) !important;
+  color: white !important;
+  ion-label {
+    color: white !important;
+  }
+}
+.select-option{
+  max-height: 400px;
+  height: 400px
+  }
+
+  ion-select {
+    --max-height: unset;
+    --height: 200px;
+  }
+
+capacitor-google-map {
+  display: inline-block;
+  width: 275px;
+  height: 400px;
+}
+
+
+@font-face{
+  font-family:"Ubuntu";
+  src:url(../../assets/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url(../../assets/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Black";
+  src:url(../../assets/Montserrat/Montserrat-Black.ttf);
+}
+@font-face{
+  font-family:"Montserrat-Bold";
+  src:url(../../assets/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+  font-family:"Itallic";
+  src:url(../../assets/newItalic.woff2);
+}
